@@ -1,2 +1,2 @@
-# huffman
-Text comression/decompression using Huffman Encoding
+# Huffman Encoding
+Simple text comression/decompression using Huffman Encoding.
