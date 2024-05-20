@@ -1,18 +1,9 @@
-/*
- * main.cpp
- *
- *  Created on: 08.Haz.2015
- *      Author: asus
- */
-
-#ifndef MAIN_CPP_
-#define MAIN_CPP_
-
+#include <cstring>
+#include <iostream>
 #include "HuffmanTree.h"
 
 int main(int argc,char *argv[])
 {
-	//TODO: add usage output
     char *command,*filename,*compressfilename;
     if(argc>1)
     {
@@ -35,4 +26,3 @@ int main(int argc,char *argv[])
     return 0;
 }
 
-#endif /* MAIN_CPP_ */

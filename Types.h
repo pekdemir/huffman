@@ -1,18 +1,6 @@
-/*
- * Types.h
- *
- *  Created on: 08.Haz.2015
- *      Author: asus
- */
-
 #ifndef TYPES_H_
 #define TYPES_H_
 
-#include <stdio.h>
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <string.h>
 #define ENDCHAR 0x03 //end of text
 #define NULLCHAR 0x00
 

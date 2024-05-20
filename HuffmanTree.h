@@ -1,13 +1,6 @@
-/*
- * HuffmanTree.h
- *
- *  Created on: 08.Haz.2015
- *      Author: asus
- */
+#pragma once
 
-#ifndef HUFFMANTREE_H_
-#define HUFFMANTREE_H_
-
+#include <vector>
 #include "Types.h"
 using namespace std;
 
@@ -34,4 +27,3 @@ public:
     void loadString(char* filename);
 };
 
-#endif /* HUFFMANTREE_H_ */

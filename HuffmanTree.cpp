@@ -1,12 +1,7 @@
-/*
-* HuffmanTree.cpp
-*
-*  Created on: 08.Haz.2015
-*      Author: asus
-*/
-
+#include <cstring>
+#include <iostream>
+#include <algorithm>
 #include "HuffmanTree.h"
-
 
 bool comperator(Node* n1, Node* n2)
 {
