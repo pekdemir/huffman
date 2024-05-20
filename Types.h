@@ -1,5 +1,4 @@
-#ifndef TYPES_H_
-#define TYPES_H_
+#pragma once
 
 #define ENDCHAR 0x03 //end of text
 #define NULLCHAR 0x00
@@ -25,4 +24,3 @@ typedef struct _node
     _node* right;
 }Node;
 
-#endif /* TYPES_H_ */

@@ -1,28 +1,27 @@
 #include <cstring>
 #include <iostream>
+#include <filesystem>
 #include "HuffmanTree.h"
 
-int main(int argc,char *argv[])
-{
-    char *command,*filename,*compressfilename;
-    if(argc>1)
-    {
-        command = argv[1];
-        filename = argv[2];
-        compressfilename = argv[3];
-    }else
-    {
-    	cout << "Usage: " << endl;
-    	cout << "For compressing:\n$huffmancoding -c fromfilename compressedfilename\n" << endl;
-    	cout << "For decompressing:\n$huffmancoding -d tofilename compressedfilename \n" << endl;
+int main(int argc, char *argv[]) {
+    if(argc > 1) {
+        std::string command(argv[1]);
+        std::filesystem::path filename(argv[2]);
+        std::filesystem::path compressedfilename(argv[3]);
+
+        HuffmanTree ht = HuffmanTree();
+        if(command == "-c")
+            ht.compress(filename, compressedfilename);
+
+        else if(command == "-d")
+            ht.decompress(compressedfilename, filename);
+    } else {
+    	std::cout << "Usage:\n";
+    	std::cout << "For compressing:\n$./huffman -c fromfilename compressedfilename\n";
+    	std::cout << "For decompressing:\n$huffman -d tofilename compressedfilename \n";
     }
 
-    HuffmanTree ht = HuffmanTree();
-    if(!strcmp(command,"-c"))
-        ht.compress(filename,compressfilename);
 
-    if(!strcmp(command,"-d"))
-        ht.decompress(compressfilename,filename);
     return 0;
 }
 
