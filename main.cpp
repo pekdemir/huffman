@@ -16,9 +16,9 @@ int main(int argc, char *argv[]) {
         else if(command == "-d")
             ht.decompress(compressedfilename, filename);
     } else {
-    	std::cout << "Usage:\n";
-    	std::cout << "For compressing:\n$./huffman -c fromfilename compressedfilename\n";
-    	std::cout << "For decompressing:\n$huffman -d tofilename compressedfilename \n";
+        std::cout << "Usage:\n";
+        std::cout << "For compressing:\n$./huffman -c fromfilename compressedfilename\n";
+        std::cout << "For decompressing:\n$huffman -d tofilename compressedfilename \n";
     }
 
 
