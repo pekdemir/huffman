@@ -279,7 +279,6 @@ void HuffmanTree::decompress(std::filesystem::path& input, std::filesystem::path
 
     int ibuff = 0;
     int temp = 0;
-    int index = 0;
     int count = 32;
     unsigned int data_size;
 
@@ -295,7 +294,7 @@ void HuffmanTree::decompress(std::filesystem::path& input, std::filesystem::path
     input_stream.read(reinterpret_cast<char*>(&data_size), sizeof(data_size));
     std::cout << "Char count: " << data_size << "\n";
 
-    std::string str('\0', data_size);
+    std::string str;
 
     while(true)
     {
@@ -303,14 +302,14 @@ void HuffmanTree::decompress(std::filesystem::path& input, std::filesystem::path
         {
             if(curr->ec.c == ENDCHAR)
                 break;
-            str[index++] = curr->ec.c;
+            str += curr->ec.c;
             curr = root;
         }
 
         if(count == 32)
         {
             input_stream.read(reinterpret_cast<char*>(&ibuff), sizeof(ibuff));
-            if(input_stream.eof())
+            if(input_stream.peek() == EOF)
                 break;
             /*printf("ibuff:");
             printbin(ibuff,32);
@@ -330,7 +329,7 @@ void HuffmanTree::decompress(std::filesystem::path& input, std::filesystem::path
     }
 
     
-    output_stream.write(str.c_str(), data_size);
+    output_stream.write(str.c_str(), str.size());
     std::cout << "Decompression is completed!.\n";
 }
 

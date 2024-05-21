@@ -14,11 +14,17 @@ int main(int argc, char *argv[]) {
             ht.compress(filename, compressedfilename);
 
         else if(command == "-d")
-            ht.decompress(compressedfilename, filename);
+            ht.decompress(filename, compressedfilename);
+        else{
+            std::cout << "Usage:\n";
+            std::cout << "For compressing:\n$./" << argv[0] << " -c fromfilename compressedfilename\n";
+            std::cout << "For decompressing:\n$./" << argv[0] << " -d tofilename compressedfilename \n";
+        }
+
     } else {
         std::cout << "Usage:\n";
-        std::cout << "For compressing:\n$./huffman -c fromfilename compressedfilename\n";
-        std::cout << "For decompressing:\n$huffman -d tofilename compressedfilename \n";
+        std::cout << "For compressing:\n$./" << argv[0] << " -c fromfilename compressedfilename\n";
+        std::cout << "For decompressing:\n$./" << argv[0] << " -d tofilename compressedfilename \n";
     }
 
 
